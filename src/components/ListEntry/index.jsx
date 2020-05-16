@@ -5,6 +5,8 @@ import './style.less';
 const ListEntry = (props) => {
     const { title, code, units } = props;
 
+    console.log(units);
+
     return (
         <div className="list-entry">
             <div className="title">{code}</div>

@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import WebFont from 'webfontloader';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import './index.less';
+
 import GuestPage from './containers/GuestPage';
 import LandingPage from './containers/LandingPage';
 import LoginPage from './containers/LoginPage';
 import OnboardPage from './containers/OnboardPage';
 import RegisterPage from './containers/RegisterPage';
+import PlannerPage from './containers/PlannerPage';
 
 WebFont.load({
   google: {
@@ -23,22 +26,25 @@ const App = () => {
     <Router>
       <div>
         <Switch>
-          <Route path="/guest">
+          <Route exact path="/guest">
             <GuestPage />
           </Route>
-          <Route path="/landing">
+          <Route exact path="/landing">
             <LandingPage />
           </Route>
-          <Route path="/login">
+          <Route exact path="/login">
             <LoginPage />
           </Route>
-          <Route path="/onboard">
+          <Route exact path="/onboard">
             <OnboardPage />
           </Route>
           <Route path="/register">
             <RegisterPage />
           </Route>
-          <Route path="/">
+          <Route exact path="/planner">
+            <PlannerPage />
+          </Route>
+          <Route exact path="/">
           </Route>
         </Switch>
       </div>

@@ -1,0 +1,28 @@
+.planner {
+    width: 100vw;
+    background-color: lightblue;
+}
+
+.planner > div {
+    /* wrapper */
+  }
+  
+  .planner > div > div {
+    /* draggable root */
+  }
+  
+  .planner > div > div > div {
+    /* whole-column */
+  }
+  
+  .planner > div > div > div > div:first-child {
+    /* column header wrapper */
+    background-color: green;
+  }
+  
+  .planner > div > div > div > div:last-of-type {
+    /* card list - since not rendering the add button */
+    background-color: yellow;
+    // max-height: 600px;
+    // overflow: scroll;
+  }
