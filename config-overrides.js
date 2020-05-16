@@ -7,6 +7,6 @@ module.exports = override(
   }),
   addLessLoader({
     javascriptEnabled: true,
-    modifyVars: { '@primary-color': '#DB574F' },
+    modifyVars: { '@primary-color': '#DB574F', '@font-family': 'Raleway' },
   }),
 );
