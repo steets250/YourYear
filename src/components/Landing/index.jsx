@@ -20,7 +20,7 @@ const Landing = () => {
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100vw' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '50%' }}>
                         <h1>A 4-year course planner made just for you</h1>
-                        <h2>YourYear allows students to plan their educational plan with a sleek drag and drop interface. We make sure you reach you fulfill all university requirements and as well as keeping track of your GPA and units.</h2>
+                        <h2>YourYear allows students to plan their academic schedule with a sleek drag and drop interface. We make it easy to view your quarterly plans, rearrange schedules, and learn more about avaliable courses.</h2>
                     </div>
                 </div>
 
