@@ -1,28 +1,56 @@
 .planner {
     width: 100vw;
-    background-color: lightblue;
+    background-color: #F0F2F5;
+    font-family: sans-serif;
 }
 
 .planner > div {
     /* wrapper */
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
   
   .planner > div > div {
     /* draggable root */
+    height: 100%;
+    width: 100%;
   }
   
+  .planner > div > div > div:first-of-type {
+    /* whole-column */
+    background-color: #F0F2F5;
+  }
+
   .planner > div > div > div {
     /* whole-column */
+    color: #333333;
+    text-align: center;
+    font-size: 24px;
+    background-color: #F0F2F5;
+    width: calc(100vw / 6);
+    margin: 0;
+    border: solid 2px #DDDDDD;
+  }
+
+  .planner > div > div > div:last-of-type {
+    /* whole-column */
+    background-color: #F0F2F5;
   }
   
   .planner > div > div > div > div:first-child {
     /* column header wrapper */
-    background-color: green;
+    // background-color: green;
+  }
+
+  .planner > div > div > div > div:first-child > div {
+    // color: #DB574F;
   }
   
   .planner > div > div > div > div:last-of-type {
     /* card list - since not rendering the add button */
-    background-color: yellow;
+    // background-color: yellow;
     // max-height: 600px;
     // overflow: scroll;
   }

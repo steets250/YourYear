@@ -1,85 +1,86 @@
 import React, { useState } from 'react';
 import Board, { addCard, addColumn, moveCard } from '@lourenci/react-kanban'
+import {Modal, Button} from 'antd';
 
 import ListEntry from '../ListEntry';
 import './style.less';
 
 const initialBoard = {
-    columns: [
-      {
-        id: 0,
-        title: 'Search',
-        cards: [
-          {
-            id: 0,
-            title: 'Advanced Data Structures',
-            code: 'CSE 100',
-            units: 4,
-          },
-        ]
-      },
-      {
-        id: 1,
-        title: 'Fall',
-        cards: [
-          {
-            id: 1,
-            title: 'Advanced Data Structures',
-            code: 'CSE 100',
-            units: 4,
-          },
-        ]
-      },
-      {
-        id: 2,
-        title: 'Winter',
-        cards: [
-          {
-            id: 2,
-            title: 'Advanced Data Structures',
-            code: 'CSE 100',
-            units: 4,
-          },
-        ]
-      },
-      {
-        id: 3,
-        title: 'Spring',
-        cards: [
-          {
-            id: 3,
-            title: 'Advanced Data Structures',
-            code: 'CSE 100',
-            units: 4,
-          },
-        ]
-      },
-      {
-        id: 4,
-        title: 'Summer',
-        cards: [
-          {
-            id: 4,
-            title: 'Advanced Data Structures',
-            code: 'CSE 100',
-            units: 4,
-          },
-        ]
-      },
-      {
-        id: 5,
-        title: 'Possible',
-        cards: [
-          {
-            id: 5,
-            title: 'Advanced Data Structures',
-            code: 'CSE 100',
-            units: 4,
-          },
-        ]
-      },
-    ]
-  }
+  columns: [
+    {
+      id: 0,
+      title: 'Search',
+      cards: [
+        {
+          id: 0,
+          title: 'Advanced Data Structures',
+          code: 'CSE 100',
+          units: 4,
+        },
+      ]
+    },
+    {
+      id: 1,
+      title: 'Fall \'20',
+      cards: [
+        {
+          id: 1,
+          title: 'Advanced Data Structures',
+          code: 'CSE 100',
+          units: 4,
+        },
+      ]
+    },
+    {
+      id: 2,
+      title: 'Winter \'21',
+      cards: [
+        {
+          id: 2,
+          title: 'Advanced Data Structures',
+          code: 'CSE 100',
+          units: 4,
+        },
+      ]
+    },
+    {
+      id: 3,
+      title: 'Spring \'21',
+      cards: [
+        {
+          id: 3,
+          title: 'Advanced Data Structures',
+          code: 'CSE 100',
+          units: 4,
+        },
+      ]
+    },
+    {
+      id: 4,
+      title: 'Summer \'21',
+      cards: [
+        {
+          id: 4,
+          title: 'Advanced Data Structures',
+          code: 'CSE 100',
+          units: 4,
+        },
+      ]
+    },
+    {
+      id: 5,
+      title: 'Possible',
+      cards: [
+        {
+          id: 5,
+          title: 'Advanced Data Structures',
+          code: 'CSE 100',
+          units: 4,
+        },
+      ]
+    },
+  ]
+}
 
 const Planner = () => {
   // You need to control the state yourself.
@@ -90,17 +91,32 @@ const Planner = () => {
     setBoard(updatedBoard);
   }
 
-const renderCard = (card, cardBag) => {
-    return(
-        <ListEntry dragging={cardBag.dragging} title={card.title} code={card.code} units={card.units} onClick={cardBag.removeCard} />
+  const renderCard = (card, cardBag) => {
+    return (
+      <ListEntry setVisible={setVisible} dragging={cardBag.dragging} title={card.title} code={card.code} units={card.units} onClick={cardBag.removeCard} />
     );
   }
 
-    return (
-        <div className="planner">
-            <Board renderCard={renderCard} onCardDragEnd={handleCardMove} disableColumnDrag>{controlledBoard}</Board>
-        </div>
-    );
+  const [visible, setVisible] = useState(false);
+  
+  const handleOk = e => {
+    setVisible(false);
+  };
+  
+  const handleCancel = e => {
+    setVisible(false);
+  };
+
+  return (
+    <div className="planner">
+        <Modal title="Basic Modal" visible={visible} onCancel={handleCancel} footer={null}>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+        </Modal>
+      <Board renderCard={renderCard} onCardDragEnd={handleCardMove} disableColumnDrag>{controlledBoard}</Board>
+    </div>
+  );
 };
 
 export default Planner;
