@@ -21,7 +21,7 @@ const Login = () => {
                         <Input className="input" size="large" placeholder="Password" />
                     </div>
                     <div className="button-container">
-                        <Button className="button" type="primary" shape="round" size={"large"} onClick={() => { history.push('/onboard') }}>
+                        <Button className="button" type="primary" shape="round" size={"large"} onClick={() => { history.push('/planner') }}>
                             Login
                     </Button>
                     </div>

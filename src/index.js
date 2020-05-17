@@ -7,7 +7,6 @@ import history from './history';
 
 import './index.less';
 
-import GuestPage from './containers/GuestPage';
 import LandingPage from './containers/LandingPage';
 import LoginPage from './containers/LoginPage';
 import OnboardPage from './containers/OnboardPage';
@@ -42,9 +41,6 @@ const App = () => {
           </Route>
           <Route exact path="/planner">
             <PlannerPage />
-          </Route>
-          <Route exact path="/guest">
-            <GuestPage />
           </Route>
         </Switch>
       </div>

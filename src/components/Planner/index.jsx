@@ -109,10 +109,10 @@ const Planner = () => {
 
   return (
     <div className="planner">
-        <Modal title="Basic Modal" visible={visible} onCancel={handleCancel} footer={null}>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
+        <Modal title="CSE 100" visible={visible} onCancel={handleCancel} footer={null}>
+          <p>Advance Data Structures (4)</p>
+          <p>Offered in Fall, Winter, Spring</p>
+          <p>SPrerequisites: CSE 12, CSE 15L, CSE 21, CSE 30</p>
         </Modal>
       <Board renderCard={renderCard} onCardDragEnd={handleCardMove} disableColumnDrag>{controlledBoard}</Board>
     </div>
