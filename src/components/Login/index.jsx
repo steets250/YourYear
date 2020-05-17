@@ -18,12 +18,12 @@ const Login = () => {
                         <Input className="input" size="large" placeholder="Username" />
                     </div>
                     <div className="input-container">
-                        <Input className="input" size="large" placeholder="Password" />
+                        <Input.Password className="input" size="large" placeholder="Password" />
                     </div>
                     <div className="button-container">
                         <Button className="button" type="primary" shape="round" size={"large"} onClick={() => { history.push('/planner') }}>
                             Login
-                    </Button>
+                        </Button>
                     </div>
                 </div>
             </div>

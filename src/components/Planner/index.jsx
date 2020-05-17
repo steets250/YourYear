@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Board, { moveCard } from '@lourenci/react-kanban'
-import { Modal } from 'antd';
+import { Modal, Input } from 'antd';
 
 import ListEntry from '../ListEntry';
 import './style.less';
@@ -147,6 +147,7 @@ const Planner = () => {
         <p style={{textAlign: 'center', width: '100%'}}>Prerequisites: CSE 12, CSE 15L, CSE 21, CSE 30</p>
         <p>High-performance data structures and supporting algorithms. Use and implementation of data structures like (un)balanced trees, graphs, priority queues, and hash tables. Also, memory management, pointers, recursion. Theoretical and practical performance analysis, both average case and amortized. Uses C++ and STL.</p>
       </Modal>
+      <Input style={{position: 'absolute', width: '200px', marginTop: '64px', marginLeft: '16px'}} size="large" placeholder="Class Name" />
       <Board renderCard={renderCard} onCardDragEnd={handleCardMove} disableColumnDrag>{controlledBoard}</Board>
     </div>
   );
