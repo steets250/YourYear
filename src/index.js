@@ -11,7 +11,6 @@ import LoginPage from './containers/LoginPage';
 import OnboardPage from './containers/OnboardPage';
 import RegisterPage from './containers/RegisterPage';
 import PlannerPage from './containers/PlannerPage';
-import SignIn from './components/Signin';
 
 WebFont.load({
   google: {

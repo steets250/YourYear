@@ -1,113 +1,62 @@
-import React from 'react';
-import { PageHeader } from 'antd';
-import { Layout, Dropdown, Menu, Breadcrumb } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
-import { Input } from 'antd';
-import { Button, Radio } from 'antd';
-import { DownloadOutlined } from '@ant-design/icons';
-import { DownOutlined } from '@ant-design/icons';
-import { Select } from 'antd';
-import './style.less';
+import React, { useState, useEffect } from 'react';
+import { Select, Button } from 'antd';
 
+import { getColleges, getMajors } from '../../actions/info';
+
+import './style.less';
 
 const { Option } = Select;
 
-
-function onChange(value) {
-    console.log(`selected ${value}`);
-}
-
-function onBlur() {
-    console.log('blur');
-}
-
-function onFocus() {
-    console.log('focus');
-}
-
-function onSearch(val) {
-    console.log('search:', val);
-}
-
-
-
-
 const Onboard = () => {
+    const [colleges, setColleges] = useState([]);
+    const [majors, setMajors] = useState([]);
+
+    useEffect(() => {
+        getColleges((resp) => {
+            console.log(resp);
+            setColleges(resp.data)
+        });
+    });
+
+    const onChange = (option) => {
+        // getMajors('ksdljfklds', (resp) => {
+        //     console.log(resp);
+        //     setMajors(resp.data)
+        // });
+    }
+
+    const onChangeCollege = (option) => {
+
+    }
+
     return (
         <div className="register">
             <div className="header">
                 <div className="header-title">YourYear</div>
             </div>
             <div className="body">
-                {/* <div className="square"></div> */}
-                <div className="welcome">Hello IvyCool</div>
+                <div className="welcome">Hello!</div>
                 <div className="input-container">
                     <div>
-                        <Select className="dropdown"
-                            showSearch
-                            style={{ width: 300 }}
-                            placeholder="Select your college"
-                            optionFilterProp="college"
-                            onChange={onChange}
-                            onFocus={onFocus}
-                            onBlur={onBlur}
-                            onSearch={onSearch}
-                            filterOption={(input, option) =>
-                                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                            }
-                        >
-                            <Option value="Earl Warren College">Earl Warren College</Option>
-                            <Option value="Revelle College">Revelle College</Option>
-                            <Option value="John Muir College">John Muir College</Option>
-                            <Option value="Thurgood Marshall College">Thurgood Marshall College</Option>
-                            <Option value="Eleanor Roosevelt College">Eleanor Roosevelt College</Option>
-                            <Option value="Sixth College">Sixth College</Option>
+                        <Select className="dropdown" style={{ width: 300 }} placeholder="Select your college" onChange={onChangeCollege} >
+                            {colleges.map((college) => 
+                                <Option value={college.uuid}>{college.name}</Option>
+                            )}
                         </Select>
                     </div>
                 </div>
                 <div className="input-container">
                     <div>
-                        <Select className="dropdown"
-                            showSearch
-                            style={{ width: 300 }}
-                            placeholder="Major"
-                            optionFilterProp="major"
-                            onChange={onChange}
-                            onFocus={onFocus}
-                            onBlur={onBlur}
-                            onSearch={onSearch}
-                            filterOption={(input, option) =>
-                                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                            }
-                        >
-                            <Option value="Bioengineering">Bioengineering</Option>
-                            <Option value="Computer Science">Computer Science</Option>
-                            <Option value="Computer Engineering">Computer Engineering</Option>
-                            <Option value="Electrical Engineering">Electrical Engineering</Option>
-                            <Option value="Engineering Physics">Engineering Physics</Option>
-                            <Option value="Aerospace Engineering">Aerospace Engineering</Option>
-                            <Option value="Environmental Engineering">Environmental Engineering</Option>
-                            <Option value="Mechanical Engineering">Mechanical Engineering</Option>
-                            <Option value="Chemical Engineering">Chemical Engineering</Option>
+                        <Select className="dropdown" style={{ width: 300 }} placeholder="Major" onChange={onChange} >
+                            {majors.map((major) => 
+                                <Option value={major.uuid}>{major.name}</Option>
+                            )}
                         </Select>
-
                     </div>
                 </div>
                 <div className="input-container">
                     <div>
-                        <Select className="dropdown"
-                            showSearch
-                            style={{ width: 150 }}
-                            placeholder="Minor"
-                            optionFilterProp="minor"
-                            onChange={onChange}
-                            onFocus={onFocus}
-                            onBlur={onBlur}
-                            onSearch={onSearch}
-                            filterOption={(input, option) =>
-                                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                            }
-                        >
+                        <Select className="dropdown" style={{ width: 150 }} placeholder="Minor" onChange={onChange} >
                             <Option value="None">None</Option>
                             <Option value="Accounting">Accounting</Option>
                             <Option value="Anthropology">Anthropology</Option>
@@ -118,19 +67,7 @@ const Onboard = () => {
                             <Option value="Economics">Economics</Option>
                             <Option value="Entrepreneurship and Innovation">Entrepreneurship and Innovation</Option>
                         </Select>
-                        <Select className="dropdown"
-                            showSearch
-                            style={{ width: 150 }}
-                            placeholder="Graduation Year"
-                            optionFilterProp="year"
-                            onChange={onChange}
-                            onFocus={onFocus}
-                            onBlur={onBlur}
-                            onSearch={onSearch}
-                            filterOption={(input, option) =>
-                                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                            }
-                        >
+                        <Select className="dropdown" style={{ width: 150 }} placeholder="Graduation Year" optionFilterProp="year" onChange={onChange} >
                             <Option value="2021">2021</Option>
                             <Option value="2022">2022</Option>
                             <Option value="2023">2023</Option>

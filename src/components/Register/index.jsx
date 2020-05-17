@@ -12,7 +12,7 @@ import './style.less';
 const Register = () => {
     return (
         <div className="register">
-            <div className="header"> 
+            <div className="header">
                 <div className="header-title">YourYear</div>
             </div>
             <div className="body">
@@ -21,17 +21,17 @@ const Register = () => {
                 <div className="input-container">
                     <Input className="input" size="large" placeholder="Username" />
                 </div>
-                <div className="input-container"> 
-                        <Input className="input" size="large" placeholder="Password" />
+                <div className="input-container">
+                    <Input className="input" size="large" placeholder="Password" />
                 </div>
-                <div className="input-container"> 
-                        <Input className="input" size="large" placeholder="Email" />
+                <div className="input-container">
+                    <Input className="input" size="large" placeholder="Email" />
                 </div>
                 <div className="button-container">
                     <Button className="button" type="primary" shape="round" size={"large"}>
-                    Register
+                        Register
                     </Button>
-                 </div>
+                </div>
             </div>
         </div>
     );

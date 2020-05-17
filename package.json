@@ -2,6 +2,7 @@
   "name": "youryear",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "@lourenci/react-kanban": "^1.1.1",
     "@testing-library/dom": "^7.5.6",
