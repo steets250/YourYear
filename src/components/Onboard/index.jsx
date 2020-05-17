@@ -12,10 +12,10 @@ const Onboard = () => {
     const [majors, setMajors] = useState([]);
 
     useEffect(() => {
-        getColleges((resp) => {
-            console.log(resp);
-            setColleges(resp.data)
-        });
+        //getColleges((resp) => {
+            //console.log(resp);
+            //setColleges(resp.data)
+        //});
     });
 
     const onChange = (option) => {
