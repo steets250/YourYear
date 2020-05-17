@@ -7,12 +7,13 @@ import Picture from '../../landing.png';
 
 const Landing = () => {
     return (
+        <div>
         <div className="landing">
             <div>
-                <div className="header-title">Your Year</div>
+                <div className="header-title">YourYear</div>
                 <div className="button-container">
                     <Button className="signin-button" type="primary" shape="round" size={"large"}>
-                    Login
+                        Login
                     </Button>
                 </div>
                 <div className="about-us">About us</div>
@@ -32,7 +33,15 @@ const Landing = () => {
             <div className="description-3">
                 <h2>university requirements and as well as keeping track of your GPA and units.</h2>
             </div>
-            {/* <img src={Picture} style={{ height: 200, width: 200 }}></img> */}
+        </div>
+        <div className="button-container-signup">
+            <Button className="signup-button" type="primary" shape="round" size={"large"}>
+                Get Started
+            </Button>
+        </div>
+        <div className="picture-container">
+            <img src={Picture} style={{ height: 1050, width: 1050 }}></img>
+        </div>
         </div>
     );
 };
