@@ -8,7 +8,7 @@ const ModalComponent = (props) => {
 
   return (
     <Modal className="modal" footer={null} onOk={handleOk} onCancel={handleCancel} title={title} visible={visible}>
-      <p>{content}</p>
+      {content}
     </Modal>
   );
 };

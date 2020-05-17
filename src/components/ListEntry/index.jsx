@@ -11,9 +11,9 @@ const ListEntry = (props) => {
         <div className="list-entry">
             <div class="info-container">
                 <div className="title">{code}</div>
-                <img class="info" src={Info} onClick={() => {props.setVisible(true)}}/>
+                <img class="info" alt="info" src={Info} onClick={() => {props.setVisible(true)}}/>
             </div>
-            <div className="subtitle">{title} ({units})</div>
+            <div className="subtitle">({units}) {title}</div>
         </div>
     );
 };

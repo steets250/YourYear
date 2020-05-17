@@ -24,7 +24,7 @@ const Landing = () => {
                     </div>
                 </div>
 
-                <img src={Picture} style={{ position: 'absolute', right: 0, bottom: 0, height: '500px', width: '500px' }}></img>
+                <img src={Picture} alt="homepage-icon" style={{ position: 'absolute', right: 0, bottom: 0, height: '500px', width: '500px' }}></img>
             </div>
         </div>
     );

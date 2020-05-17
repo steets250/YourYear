@@ -6,7 +6,7 @@ const Header = (props) => {
     const { college, major, minor, gradYear, name } = props;
     return (
         <div className="header">
-            <span>{college}</span> <span>{major}</span> <span>{minor}</span ><span>{gradYear}</span> <span>{name}</span>
+            <span style={{fontSize: '40px'}}>YourYear</span> <span>College: {college}</span> <span>Major: {major}</span> <span>Minor: {minor}</span> <span>Grad Year: {gradYear}</span>
         </div>
     );
 };
