@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import WebFont from 'webfontloader';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
+
+import history from './history';
 
 import './index.less';
 
@@ -23,13 +25,10 @@ WebFont.load({
 
 const App = () => {
   return (
-    <Router>
+    <Router history={history}>
       <div>
         <Switch>
-          <Route exact path="/guest">
-            <GuestPage />
-          </Route>
-          <Route exact path="/landing">
+        <Route exact path="/">
             <LandingPage />
           </Route>
           <Route exact path="/login">
@@ -44,7 +43,8 @@ const App = () => {
           <Route exact path="/planner">
             <PlannerPage />
           </Route>
-          <Route exact path="/">
+          <Route exact path="/guest">
+            <GuestPage />
           </Route>
         </Switch>
       </div>
